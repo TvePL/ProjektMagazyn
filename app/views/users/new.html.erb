@@ -1,4 +1,4 @@
-<h1>Create New User</h1>
+<h1>Dodaj nowego Użytkownika</h1>
 
 <%= form_with(model: @user, local: true) do |form| %>
   <% if @user.errors.any? %>
@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :Nazwa %>
     <%= form.text_field :name %>
   </div>
 
@@ -23,7 +23,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :password %>
+    <%= form.label :Hasło %>
     <%= form.password_field :password %>
   </div>
 
