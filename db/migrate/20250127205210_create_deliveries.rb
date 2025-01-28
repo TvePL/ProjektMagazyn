@@ -6,11 +6,6 @@ class CreateDeliveries < ActiveRecord::Migration[8.0]
       t.date :order_date
 
       t.timestamps
-
-
-      remove_foreign_key :deliveries, :products
-
-      add_foreign_key :deliveries, :products, on_delete: :cascade
     end
   end
 end
