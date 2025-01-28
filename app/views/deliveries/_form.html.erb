@@ -1,0 +1,20 @@
+<%= form_with(model: delivery, local: true) do |form| %>
+  <div style="margin-bottom: 15px;">
+    <%= form.label :product_id, "Produkt", style: "display: block; font-weight: bold;" %>
+    <%= form.collection_select :product_id, Product.all, :id, :name, prompt: "Wybierz produkt", class: "form-control" %>
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <%= form.label :quantity, "Ilość", style: "display: block; font-weight: bold;" %>
+    <%= form.number_field :quantity, class: "form-control" %>
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <%= form.label :order_date, "Data zamówienia", style: "display: block; font-weight: bold;" %>
+    <%= form.date_select :order_date, class: "form-control" %>
+  </div>
+
+  <div style="text-align: center;">
+    <%= form.submit "OK", class: "btn btn-success btn-sm" %>
+  </div>
+<% end %>

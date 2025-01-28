@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<table style="border-collapse: collapse; width: 30%; margin: auto; margin-top: 20px; border: 1px solid #ddd; font-size: 14px;">
+  <tbody>
+  <tr>
+    <th style="text-align: left; padding: 8px; background-color: #f9f9f9; width: 50%;">Nazwa produktu:</th>
+    <td style="padding: 8px; border-bottom: 1px solid #ddd;"><%= @product.name %></td>
+  </tr>
+  <tr>
+    <th style="text-align: left; padding: 8px; background-color: #f9f9f9;">Ilość:</th>
+    <td style="padding: 8px; border-bottom: 1px solid #ddd;"><%= @product.quantity %></td>
+  </tr>
+  <tr>
+    <th style="text-align: left; padding: 8px; background-color: #f9f9f9;">Kategorie:</th>
+    <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+      <% if @product.categories.any? %>
+        <%= @product.categories.map(&:name).join(", ") %> <!-- Łączenie nazw kategorii przecinkiem -->
+      <% else %>
+        Brak kategorii
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left; padding: 8px; background-color: #f9f9f9;">Użytkownik:</th>
+    <td style="padding: 8px; border-bottom: 1px solid #ddd;"><%= @product.user.name if @product.user %></td>
+  </tr>
+  </tbody>
+</table>
+
+<div style="margin-top: 15px; display: flex; justify-content: center; gap: 8px;">
+  <%= link_to "Edytuj produkt", edit_product_path(@product), class: "btn btn-primary btn-sm" %>
+  <%= button_to "Usuń produkt", @product, method: :delete, data: { confirm: "Czy na pewno chcesz usunąć ten produkt?" }, class: "btn btn-danger btn-sm" %>
+  <%= link_to "Strona główna", root_path, class: "btn btn-secondary btn-sm" %>
+</div>

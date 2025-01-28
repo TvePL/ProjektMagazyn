@@ -1,0 +1,30 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name, "Nazwa produktu" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantity, "Ilość" %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :categories, "Kategorie" %>
+    <%= form.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
+      <div>
+        <%= b.check_box %>
+        <%= b.label %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id, "Użytkownik" %>
+    <%= form.collection_select :user_id, User.all, :id, :name, prompt: "Wybierz użytkownika" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "OK", class: "btn btn-success btn-sm" %>
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+<p style="color: green; text-align: center;"><%= notice %></p>
+
+<table style="border-collapse: collapse; width: 50%; margin: auto; margin-top: 20px; border: 1px solid #ddd; font-size: 14px;">
+  <tbody>
+  <tr>
+    <th style="text-align: left; padding: 8px; background-color: #f9f9f9;">Produkt:</th>
+    <td style="padding: 8px; border-bottom: 1px solid #ddd;">
+      <%= @delivery.product ? @delivery.product.name : 'Produkt niedostępny' %>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left; padding: 8px; background-color: #f9f9f9;">Ilość:</th>
+    <td style="padding: 8px; border-bottom: 1px solid #ddd;"><%= @delivery.quantity %></td>
+  </tr>
+  <tr>
+    <th style="text-align: left; padding: 8px; background-color: #f9f9f9;">Data zamówienia:</th>
+    <td style="padding: 8px; border-bottom: 1px solid #ddd;"><%= @delivery.order_date %></td>
+  </tr>
+  </tbody>
+</table>
+
+<div style="margin-top: 20px; display: flex; justify-content: center; gap: 15px;">
+  <%= link_to "Edytuj zamówienie", edit_delivery_path(@delivery), class: "btn btn-primary btn-sm" %>
+  <%= button_to "Usuń zamówienie", @delivery, method: :delete, data: { confirm: "Czy na pewno chcesz usunąć to zamówienie?" }, class: "btn btn-danger btn-sm" %>
+  <%= link_to "Strona główna", root_path, class: "btn btn-secondary btn-sm" %>
+</div>

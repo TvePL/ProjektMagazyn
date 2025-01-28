@@ -1,0 +1,11 @@
+<% content_for :title, "Edytowanie produktu" %>
+
+<h1>Edytowanie produktu</h1>
+
+<%= render "form", product: @product %>
+
+<br>
+
+<div style="margin-top: 10px; display: flex; gap: 10px;">
+  <%= link_to "Strona główna", root_path, class: "btn btn-secondary btn-sm" %>
+</div>

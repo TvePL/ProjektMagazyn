@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<table>
+  <tr>
+    <th>Nazwa:</th>
+    <td><%= @category.name %></td>
+  </tr>
+  <tr>
+    <th>Opis:</th>
+    <td><%= @category.description %></td>
+  </tr>
+</table>
+
+<div class="btn-group" style="margin-top: 10px;">
+  <%= link_to "Edytuj kategorię", edit_category_path(@category), class: "btn btn-primary btn-sm" %>
+  <%= button_to "Usuń kategorię", @category, method: :delete, data: { confirm: "Czy na pewno chcesz usunąć tę kategorię?" }, class: "btn btn-danger btn-sm" %>
+  <%= link_to "Strona główna", root_path, class: "btn btn-secondary btn-sm" %>
+</div>

@@ -1,0 +1,29 @@
+<h1 style="text-align: center; margin-bottom: 20px;">Kategorie</h1>
+
+<table style="width: 80%; margin: 20px auto; border-collapse: collapse; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+  <thead>
+  <tr style="background-color: #f8f9fa;">
+    <th style="padding: 10px; text-align: left;">Nazwa</th>
+    <th style="padding: 10px; text-align: left;">Opis</th>
+    <th style="padding: 10px; text-align: left;">Akcje</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @categories.each do |category| %>
+    <tr style="background-color: #fff; border-bottom: 1px solid #ddd;">
+      <td style="padding: 10px;"><%= category.name %></td>
+      <td style="padding: 10px;"><%= category.description %></td>
+      <td style="padding: 10px;">
+
+        <%= link_to 'Edytuj', edit_category_path(category), class: 'btn btn-warning btn-sm' %> |
+        <%= link_to 'Usuń', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div style="text-align: center; margin-top: 20px;">
+  <%= link_to 'Nowa Kategoria', new_category_path, class: 'btn btn-primary' %> |
+  <%= link_to 'Wróć na Stronę Główną', root_path, class: 'btn btn-secondary' %>
+</div>

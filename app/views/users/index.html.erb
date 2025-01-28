@@ -1,0 +1,32 @@
+<h1 style="text-align: center; margin-bottom: 20px;">Użytkownicy</h1>
+
+<div class="button-container" style="text-align: center; margin-bottom: 20px;">
+  <%= link_to "Nowy Użytkownik", new_user_path, class: "btn-new-user" %>
+</div>
+
+<table class="user-table" style="width: 80%; margin: 0 auto; border-collapse: collapse;">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td>
+        <%= link_to 'Informacje', user_path(user), class: 'btn-action' %> |
+        <%= link_to 'Edytuj', edit_user_path(user), class: 'btn-action' %> |
+        <%= link_to 'Usuń', user_path(user), method: :delete, data: { confirm: 'Jesteś Pewny?' }, class: 'btn-action' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="button-container" style="text-align: center; margin-top: 20px;">
+  <%= link_to 'Strona Główna', root_path, class: 'btn-back-home' %>
+</div>

@@ -1,0 +1,39 @@
+<h1 style="text-align: center; margin-bottom: 20px;">Nowe Zamówienie</h1>
+
+<div style="width: 60%; margin: 0 auto; padding: 20px; background-color: #f8f9fa; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+  <%= form_with(model: @delivery, local: true) do |form| %>
+    <% if @delivery.errors.any? %>
+      <div style="color: red; margin-bottom: 20px;">
+        <h2>Wystąpiły błędy:</h2>
+        <ul>
+          <% @delivery.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div style="margin-bottom: 20px;">
+      <%= form.label :product_id, "Wybierz produkt" %>
+      <%= form.collection_select :product_id, Product.all, :id, :name, prompt: "Wybierz produkt", style: "width: 100%; padding: 10px;" %>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <%= form.label :quantity, "Ilość" %>
+      <%= form.number_field :quantity, value: 1, min: 1, style: "width: 100%; padding: 10px;" %>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <%= form.label :order_date, "Data Zamówienia" %>
+      <%= form.date_field :order_date, style: "width: 100%; padding: 10px;" %>
+    </div>
+
+    <div style="text-align: center;">
+      <%= form.submit "Dodaj Zamówienie", class: "btn btn-success", style: "padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 5px;" %>
+    </div>
+  <% end %>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <%= link_to 'Powrót do listy zamówień', deliveries_path, class: 'btn btn-secondary', style: "padding: 10px 20px; background-color: #6c757d; color: white; text-decoration: none; border-radius: 5px;" %>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<% content_for :title, "Edycja kategorii" %>
+
+<h1>Edycja kategorii</h1>
+
+<%= form_with(model: @category) do |form| %>
+  <div class="field">
+    <%= form.label :name, "Nazwa kategorii" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, "Opis kategorii" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "OK", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Pokaż kategorię", @category, class: "btn btn-secondary" %> |
+  <%= link_to "Strona główna", root_path, class: "btn btn-secondary" %>
+</div>

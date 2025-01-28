@@ -1,0 +1,12 @@
+<% content_for :title, "Edytowanie zamówienia" %>
+
+<h1 style="text-align: center;">Edytowanie zamówienia</h1>
+
+<div style="max-width: 400px; margin: auto;">
+  <%= render "form", delivery: @delivery %>
+</div>
+
+<div style="margin-top: 15px; display: flex; justify-content: center; gap: 8px;">
+  <%= link_to "Pokaż zamówienie", @delivery, class: "btn btn-secondary btn-sm" %>
+  <%= link_to "Strona główna", root_path, class: "btn btn-secondary btn-sm" %>
+</div>

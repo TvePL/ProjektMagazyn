@@ -1,0 +1,34 @@
+<h1 style="text-align: center; margin-bottom: 20px;">Zamówienia</h1>
+
+<div style="width: 80%; margin: 0 auto; padding: 20px; background-color: #f8f9fa; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+  <%= link_to 'Nowe Zamówienie', new_delivery_path, class: 'btn btn-primary' %>
+
+  <table style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+    <thead>
+    <tr>
+      <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Produkt</th>
+      <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Ilość</th>
+      <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Data Zamówienia</th>
+      <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Akcje</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @deliveries.each do |delivery| %>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ddd;"><%= delivery.product.name %></td>
+        <td style="padding: 10px; border: 1px solid #ddd;"><%= delivery.quantity %></td>
+        <td style="padding: 10px; border: 1px solid #ddd;"><%= delivery.order_date.strftime('%Y-%m-%d') %></td>
+        <td style="padding: 10px; border: 1px solid #ddd;">
+          <%= link_to 'Pokaż', delivery_path(delivery), class: 'btn btn-info btn-sm' %> |
+          <%= link_to 'Edytuj', edit_delivery_path(delivery), class: 'btn btn-warning btn-sm' %> |
+          <%= link_to 'Usuń', delivery_path(delivery), method: :delete, data: { confirm: 'Czy na pewno chcesz usunąć to zamówienie?' }, class: 'btn btn-danger btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <%= link_to 'Wróć na stronę główną', root_path, class: 'btn btn-secondary' %>
+  </div>
+</div>

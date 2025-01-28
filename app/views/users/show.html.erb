@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Informacie o Użytkowniku</h1>
+
+
+<table style="width: 100%; border: 1px solid #ccc; border-collapse: collapse;">
+  <tr style="background-color: #f2f2f2;">
+
+  </tr>
+  <tr>
+    <td style="padding: 10px; border: 1px solid #ccc;">Nazwa</td>
+    <td style="padding: 10px; border: 1px solid #ccc;"><%= @user.name %></td>
+  </tr>
+  <tr>
+    <td style="padding: 10px; border: 1px solid #ccc;">Email</td>
+    <td style="padding: 10px; border: 1px solid #ccc;"><%= @user.email %></td>
+  </tr>
+  <tr>
+    <td style="padding: 10px; border: 1px solid #ccc;">Hasło</td>
+    <td style="padding: 10px; border: 1px solid #ccc;"><%= @user.password %></td>
+  </tr>
+</table>
+
+<div style="margin-top: 20px;">
+  <%= link_to "Edytuj Uzytkownika", edit_user_path(@user), class: "btn" %> |
+  <%= link_to "Strona Główna", root_path, class: "btn" %>
+</div>
+
+
+<div style="margin-top: 10px;">
+  <%= button_to "Usuń Użytkownika", @user, method: :delete, class: "btn-danger" %>
+</div>

@@ -1,0 +1,136 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+
+.btn-danger {
+    background-color: #f44336;
+}
+
+.btn-danger:hover {
+    background-color: #da190b;
+}
+
+
+.field {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+
+
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* USER index */
+
+/* app/assets/stylesheets/application.css */
+
+/* Tabela użytkowników */
+.user-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-table th {
+    background-color: #f4f7f6;
+}
+
+.user-table td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.user-table td a:hover {
+    text-decoration: underline;
+}
+
+/* Przycisk dodawania nowego użytkownika */
+.btn-new-user {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-new-user:hover {
+    background-color: #45a049;
+}
+
+/* Przycisk powrotu na stronę główną */
+.btn-back-home {
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-back-home:hover {
+    background-color: #0b7dda;
+}
+
+/* Przycisk akcji (Show, Edit, Delete) */
+.btn-action {
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-action:hover {
+    background-color: #ddd;
+}
+
